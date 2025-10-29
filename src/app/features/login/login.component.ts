@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class LoginComponent {
   private fb: FormBuilder = inject(FormBuilder);
+  public authService = inject(AuthService);
+
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
@@ -27,7 +30,4 @@ export class LoginComponent {
     }
   }
 
-  loginWithMicrosoft() {
-    console.log('Redirect to Google OAuth');
-  }
 }

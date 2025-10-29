@@ -3,11 +3,13 @@ import { HomeComponent } from './features/home/home.component';
 import { LoginComponent } from './features/login/login.component';
 import { PublicLayoutComponent } from './layouts/public-layout.component';
 import { PrivateLayoutComponent } from './layouts/private-layout.component';
+import { MicrosoftOAuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
     {
         path: '',
         component: PublicLayoutComponent,
+        canActivate: [MicrosoftOAuthGuard],
         children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
