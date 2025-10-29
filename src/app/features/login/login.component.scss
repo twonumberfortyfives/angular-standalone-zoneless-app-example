@@ -1,0 +1,22 @@
+.login-card {
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100vh;
+}
+
+.oauth-section {
+    text-align:center; margin-top:1rem;
+}
+
+mat-card {
+    width: 350px; padding: 2rem;
+}
+
+mat-form-field {
+    width:100%; margin-bottom:1rem;
+}
+
+button { 
+    width:100%;
+}
