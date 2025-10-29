@@ -27,7 +27,7 @@ export class LoginComponent {
     }
   }
 
-  loginWithGoogle() {
+  loginWithMicrosoft() {
     console.log('Redirect to Google OAuth');
   }
 }
