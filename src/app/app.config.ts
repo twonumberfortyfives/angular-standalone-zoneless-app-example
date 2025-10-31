@@ -13,7 +13,3 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([MicrosoftOAuthInterceptor])),
   ]
 };
-
-export const environment = {
-  backendApiUrl: 'http://localhost:8000'
-}

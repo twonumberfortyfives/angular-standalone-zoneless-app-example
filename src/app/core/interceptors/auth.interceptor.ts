@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpHandlerFn, HttpRequest } from "@angular/common/h
 import { inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { catchError, throwError } from "rxjs";
-import { environment } from "../../app.config";
+import { environment } from "../../../environments/environment";
 
 
 export function MicrosoftOAuthInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
