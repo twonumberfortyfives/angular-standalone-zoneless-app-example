@@ -14,7 +14,6 @@ export function MicrosoftOAuthInterceptor(req: HttpRequest<unknown>, next: HttpH
     return next(req).pipe(
         catchError((err: HttpErrorResponse) => {
             if (err.status === 403) {
-                console.log('HTTP error:', err)
                 router.navigate(['/login'])
             }
             return throwError(() => err);

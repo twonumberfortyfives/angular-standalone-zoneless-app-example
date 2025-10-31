@@ -17,7 +17,7 @@ export class AuthService {
     authorizeWithMicrosoft(): Observable<boolean> {
         return this.httpClient.get<number>(
             `${this.backendApiUrl}/api/oauth/protected/`, 
-            {observe: 'response', withCredentials: true}
+            { observe: 'response', withCredentials: true }
         ).pipe(
             map(response => response.status === 200),
             catchError((err) => {
@@ -28,9 +28,12 @@ export class AuthService {
     }
 
     authenticateWithMicrosoft() {
-        this.httpClient.get(`${this.oauthEndpoint}login/`)
-            .subscribe(
-                (response) => console.log(response)
-            )
+        this.httpClient.get<{ url: string }>(
+            `${this.oauthEndpoint}login/`, 
+            { withCredentials: true }
+        )
+            .subscribe((response) =>{
+                window.location.href = response.url
+            })
     }
 }
